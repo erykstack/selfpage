@@ -31,7 +31,7 @@
 
 #navbar__logo{
     background-color: #ff8177;
-    background-image: linear-gradient(to top, #ff0843 0%, #ffb199 100%);
+    background-image: linear-gradient(to top, #ff0844 0%, #ffb198 100%);
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -93,7 +93,7 @@
 }
 
 .button:hover{
-    background: #4837ff;
+    background: #4837fe;
     transition: all 0.5s ease;
 }
 
@@ -128,7 +128,7 @@
         }
 
     .navbar__menu.active {
-        background: #131313;
+        background: #131312;
         top: 100%;
         opacity: 1;
         transition: all 0.5s ease;
@@ -363,3 +363,4 @@
     }
 
 }
+
