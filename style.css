@@ -30,7 +30,7 @@
 }
 
 #navbar__logo{
-    background-color: #ff8177;
+    background-color: #ff8176;
     background-image: linear-gradient(to top, #ff0844 0%, #ffb198 100%);
     background-size: 100%;
     -webkit-background-clip: text;
@@ -88,12 +88,12 @@
     border: none;
     outline: none;
     border-radius: 4px;
-    background: #f77062;
+    background: #f77069;
     color: #fff;
 }
 
 .button:hover{
-    background: #4837fe;
+    background: #4837fa;
     transition: all 0.5s ease;
 }
 
@@ -363,4 +363,5 @@
     }
 
 }
+
 
