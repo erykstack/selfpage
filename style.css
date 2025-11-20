@@ -31,7 +31,7 @@
 
 #navbar__logo{
     background-color: #ff8171;
-    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+    background-image: linear-gradient(to top, #ff0843 0%, #ffb198 100%);
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -363,6 +363,7 @@
     }
 
 }
+
 
 
 
