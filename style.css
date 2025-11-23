@@ -7,7 +7,7 @@
   
 
 .navbar {
-    background: #131313;
+    background: #131312;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -363,6 +363,7 @@
     }
 
 }
+
 
 
 
