@@ -1,5 +1,5 @@
     // UZUPEŁNIJ SWOIM KLUCZEM API
-    const API_KEY = d87cf58ba69cf843b1876e7f9801db7e;
+    const API_KEY = 123;
 
     // Ustal współrzędne albo zmień na q=Miasto
     const LAT = 44.34;
@@ -66,5 +66,6 @@
 
     // Uruchomienie fetch'a po załadowaniu strony
     loadWeather();
+
 
 
