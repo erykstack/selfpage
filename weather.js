@@ -1,50 +1,65 @@
 const API_KEY = "x";
 
 // Ustawienia
-const LAT = 50.07;
-const LON = 19.47;
-const city_coord = "London";
+const city_coord = "Warsaw";
+
 
 async function loadLocalization() {
     const localizaiton = document.getElementById("cityLocalization");
 
     try {
         const url =
-                `http://api.openweathermap.org/geo/1.0/direct?q=${city_coord}&limit=5&appid=${API_KEY}`
+            `https://api.openweathermap.org/geo/1.0/direct?q=${city_coord}&limit=5&appid=${API_KEY}`;
         const res = await fetch(url);
         const data = await res.json();
-        
 
-        if (data.cod !== 200) {
-            localizaiton.innerHTML = "Błąd pobierania danych.";
-            return;
+        console.log("geo data:", data); // żebyś widział, co przychodzi
+
+        // TU BYŁ KILLER:
+        if (!Array.isArray(data) || data.length === 0) {
+            if (localizaiton){
+                localizaiton.innerHTML = "Localization not found";
+            }
+            return null;
         }
+
+        const first = data[0]; // city name, lat, lon, country, post code
+
+        if (localizaiton) {
+            localizaiton.innerHTML =
+                `${first.name}, ${first.country}, (${first.lat.toFixed(2)}, ${first.lon.toFixed(2)})`;
+        }
+
+        return first;
 
     } catch (err) {
         console.error(err);
-        localizaiton.innerHTML = "Błąd połączenia z API.";
+        if (localizaiton) {
+            localizaiton.innerHTML = "Błąd połączenia z API.";
+        }
+        return null;
     }
-    return data[0];
 }
 
-async function test() {
-    const wynik = await loadLocalization();
-    console.log("Poza funkcją:", wynik);
-}
 
-test();
+
+
+loadLocalization().then(coords => {
+    if (!coords) return; // jak null, to nie lecimy dalej
+    loadWeather(coords.lat, coords.lon);
+});
 
 
 function kelvinToCelsius(k) {
     return Math.round((k - 273.15) * 10) / 10;
 }
 
-async function loadWeather() {
+async function loadWeather(lat,lon) {
     const widget = document.getElementById("weather-widget");
 
     try {
         const url =
-            `https://api.openweathermap.org/data/2.5/weather?lat=${LAT}&lon=${LON}&appid=${API_KEY}`
+            `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`
                 
         const res = await fetch(url);
         const data = await res.json();
