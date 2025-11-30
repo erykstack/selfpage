@@ -1,7 +1,7 @@
 const API_KEY = "x";
 
 // Ustawienia
-const city_coord = "Warsaw";
+let city_coord = "Warsaw";
 
 
 async function loadLocalization() {
@@ -15,7 +15,6 @@ async function loadLocalization() {
 
         console.log("geo data:", data); // żebyś widział, co przychodzi
 
-        // TU BYŁ KILLER:
         if (!Array.isArray(data) || data.length === 0) {
             if (localizaiton){
                 localizaiton.innerHTML = "Localization not found";
@@ -76,6 +75,37 @@ async function loadWeather(lat,lon) {
         widget.innerHTML = "Błąd połączenia z API.";
     }
 }
+
+const cityInput = document.getElementById("city__input");
+const citySaveBtn = document.getElementById("city__save");
+
+const savedCity = localStorage.getItem("lastCity");
+if(savedCity){
+    city_coord = savedCity;
+    cityInput.value = savedCity;
+    loadLocalization().then(coords => {
+        if(!coords) return;
+        loadWeather(coords.lat, coords.lon);
+    });
+}else {
+    loadLocalization().then(coords => {
+        if(!coords) return;
+        loadWeather(coords.lat, coords.lon);
+    });
+}
+
+citySaveBtn.addEventListener("click", () => {
+    const value = cityInput.value.trim();
+    if(!value) return;
+    
+    city_coord = value; 
+    localStorage.setItem("lastsCity", value);
+
+    loadLocalization().then(coords => {
+        if(!coords) return;
+        loadWeather(coords.lat, coords.lon);
+    });
+});
 
 
 function renderWeather(data) {
