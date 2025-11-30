@@ -7,3 +7,9 @@ On the main page (index.html) you can scroll down and click for Weather site to 
 Now there is a possibility to set the weather by using the Name of the city.
 You need to open the weather.js file and on the top change the name of city_coord to anything you want! 
 This will be updated in the next session to clickable list.  
+
+Now you can type the city and set the weather! 
+<img width="305" height="133" alt="image" src="https://github.com/user-attachments/assets/2f95bc2c-15b8-4cf5-ac3f-fc3e14303e6b" />
+
+I will change the look of this in the next coding session. 
+
