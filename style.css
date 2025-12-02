@@ -7,7 +7,7 @@
   
 
 .navbar {
-    background: #131312;
+    background: #131313;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -682,3 +682,45 @@ body {
     height: 60px;
 }
 
+/* ------ Weather button------- */
+
+.city__input{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+   
+}
+
+.city__input button{
+    background-color: #87d3d8;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5rem;
+    font-size: 20px;
+    border: 3px solid #fff;
+    padding: 20px 30px;
+       
+}
+
+
+.city__input input{
+    background-color: #c2a6ab;
+    border-radius: 5rem;
+    font-size: 20px;
+    text-align: center;
+      padding: 30px 30px;
+    }
+
+#cityLocalization{
+       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-left: 4rem;
+}
+
+    
