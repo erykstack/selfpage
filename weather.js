@@ -107,6 +107,12 @@ citySaveBtn.addEventListener("click", () => {
     });
 });
 
+cityInput?.addEventListener("keydown", (e) => {
+    if(e.key === "Enter"){
+        citySaveBtn?.click();
+    }
+});
+
 
 function renderWeather(data) {
     const widget = document.getElementById("weather-widget");
