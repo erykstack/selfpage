@@ -13,3 +13,7 @@ Now you can type the city and set the weather!
 
 I will change the look of this in the next coding session. 
 
+The look of the button and input has been changed. 
+
+<img width="680" height="269" alt="image" src="https://github.com/user-attachments/assets/0fde61da-6f76-446a-816b-3fefb57518ae" />
+
