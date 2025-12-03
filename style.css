@@ -691,17 +691,19 @@ body {
     gap: 2rem;
     margin-top: 2rem;
     margin-left: 2rem;
+    align-items: flex-start;
    
 }
 
 .city__input button{
     background-color: #87d3d8;
     cursor: pointer;
+    margin-top: 15px;
     text-align: center;
     border-radius: 5rem;
     font-size: 20px;
-    border: 3px solid #fff;
-    padding: 20px 30px;
+    border: 3px solid #839c77;
+    padding: 15px 25px;
        
 }
 
@@ -712,6 +714,7 @@ body {
     font-size: 20px;
     text-align: center;
       padding: 30px 30px;
+      
     }
 
 #cityLocalization{
@@ -723,4 +726,33 @@ body {
     margin-left: 4rem;
 }
 
+ /* ------ Weather dropdown------- */       
+
+ .city__select {
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    align-items: flex-start;
+   
+ }
+
+ #city-select{
+
     
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    position: fixed;
+    min-width: 40px;
+    background-color: #ffb199;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    align-items: flex-start;
+
+ }
