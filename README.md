@@ -17,3 +17,6 @@ The look of the button and input has been changed.
 
 <img width="680" height="269" alt="image" src="https://github.com/user-attachments/assets/0fde61da-6f76-446a-816b-3fefb57518ae" />
 
+Look of the input and button has been updated. I also added dropdown list with few cities! Now you can choose one and get the weather!
+
+<img width="1292" height="442" alt="image" src="https://github.com/user-attachments/assets/be3a7eae-16be-4007-b245-6ee5b0027fb4" />
