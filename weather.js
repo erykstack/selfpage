@@ -5,7 +5,7 @@ let city_coord = "Warsaw";
 
 
 async function loadLocalization() {
-    const localizaiton = document.getElementById("cityLocalization");
+    const localizaiton = document.getElementById("cityLocalization");   //Setting the data according to city coordinates 
 
     try {
         const url =
@@ -43,8 +43,8 @@ async function loadLocalization() {
 
 
 
-loadLocalization().then(coords => {
-    if (!coords) return; // jak null, to nie lecimy dalej
+loadLocalization().then(coords => { //if the API is available we get the data to loadWeather
+    if (!coords) return; // 
     loadWeather(coords.lat, coords.lon);
 });
 
@@ -53,7 +53,8 @@ function kelvinToCelsius(k) {
     return Math.round((k - 273.15) * 10) / 10;
 }
 
-async function loadWeather(lat,lon) {
+
+async function loadWeather(lat,lon) {   // downloading API and waiting for data input
     const widget = document.getElementById("weather-widget");
 
     try {
@@ -76,6 +77,8 @@ async function loadWeather(lat,lon) {
     }
 }
 
+/*--- Name city input*/
+
 const cityInput = document.getElementById("city__input");
 const citySaveBtn = document.getElementById("city__save");
 
@@ -94,7 +97,7 @@ if(savedCity){
     });
 }
 
-citySaveBtn.addEventListener("click", () => {
+citySaveBtn.addEventListener("click", () => { //For searching on the button click
     const value = cityInput.value.trim();
     if(!value) return;
     
@@ -107,17 +110,41 @@ citySaveBtn.addEventListener("click", () => {
     });
 });
 
-cityInput?.addEventListener("keydown", (e) => {
+cityInput?.addEventListener("keydown", (e) => { //For searching within Enter click
     if(e.key === "Enter"){
         citySaveBtn?.click();
     }
 });
 
 
-function renderWeather(data) {
-    const widget = document.getElementById("weather-widget");
+/*--- Selecting from dropdown list---*/
 
-    const temp = kelvinToCelsius(data.main.temp);
+const citySelect = document.getElementById("city-select");
+
+if(citySelect){
+    citySelect.addEventListener("change", () => {
+        const value = citySelect.value;
+        if(!value) return;
+
+        city_coord = value;
+
+        loadLocalization().then(coords => {
+            if(!coords) return;
+            loadWeather(coords.lat, coords.lon)
+        });
+    });
+}
+
+
+
+
+
+/*--- Creating the HTML elements ---*/
+
+function renderWeather(data) {
+    const widget = document.getElementById("weather-widget"); 
+
+    const temp = kelvinToCelsius(data.main.temp);   //data from Kelvin to Celcius
     const feels = kelvinToCelsius(data.main.feels_like);
     const desc = data.weather[0].description;
     const city = data.name;
@@ -127,7 +154,7 @@ function renderWeather(data) {
     const wind = data.wind.speed;
 
     const iconCode = data.weather[0].icon;
-    const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+    const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`; //downloading the icon from openweather
 
     widget.innerHTML = `
         <img class="icon" src="${iconUrl}" alt="${desc}" />
