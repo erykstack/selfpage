@@ -139,7 +139,7 @@ if(citySelect){
 
 
 
-/*--- Creating the HTML elements ---*/
+/*---Creating the HTML elements---*/
 
 function renderWeather(data) {
     const widget = document.getElementById("weather-widget"); 
@@ -174,3 +174,4 @@ function renderWeather(data) {
 
 loadLocalization();
 loadWeather();
+
