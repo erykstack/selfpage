@@ -73,7 +73,7 @@ async function loadWeather(lat,lon) {   // downloading API and waiting for data 
 
     } catch (err) {
         console.error(err);
-        widget.innerHTML = "Błąd połączenia z API.";
+        widget.innerHTML = "API connection fail.";
     }
 }
 
@@ -174,4 +174,5 @@ function renderWeather(data) {
 
 loadLocalization();
 loadWeather();
+
 
