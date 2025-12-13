@@ -7,7 +7,7 @@
   
 
 .navbar {
-    background: #131312;
+    background: #131314;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -756,6 +756,7 @@ body {
     margin-left: 2rem;
     align-items: flex-start;
  }
+
 
 
 
