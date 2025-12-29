@@ -1,9 +1,4 @@
-for (let i = 5; i <= 10; i++) {
+const tekst = "Place HOLDER";
+for(i of tekst){
     console.log(i);
 }
-
-const greet = (name) => {
- console.log( `Hello ${name} `);
-}
-
-greet("Eryk");

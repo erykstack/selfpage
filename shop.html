@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Shop</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shop.css">
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;800&display=swap">
 
     <link
@@ -54,6 +55,23 @@
 </nav>
 
 
+<!-- Shop Section -->
+ 
+<main class ="container">
+    <h1>Product search</h1>
+
+    <div class="search-box">
+        <input
+        type = "text"
+        id = "serachInput"
+        placeholder="Search for name, description, category..."
+        autocomplete="off"
+        />
+    </div>
+
+    <div id= "status" class="status">Loading products...</div>
+    <section id="products" class="products" aria-live="polite"></section>
+</main>
 
 <!-- Footer Section -->
 <div class="footer__container">
@@ -126,7 +144,8 @@
 </div>
 
 
-<script src="shop.js"></script>
+<script src="shop.js" defer></script>
+<script src="app.js"></script>
 
 </body>
 </html> 
