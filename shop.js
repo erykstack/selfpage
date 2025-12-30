@@ -6,21 +6,21 @@ const statusEl = document.querySelector("#status");
 
 let allProducts = [];
 
-async function loadProducts() {
+async function loadProducts() { // async function for API download 
   try {
     const res = await fetch(API_URL);
     if (!res.ok) throw new Error("Data log failure");
     allProducts = await res.json();
 
-    statusEl.textContent = `Loaded ${allProducts.length} products.`;
-    renderProducts(allProducts);
+    statusEl.textContent = `Loaded ${allProducts.length} products.`; // counting the products 
+    renderProducts(allProducts); //calling the render funciton 
   } catch (err) {
     console.error(err);
     statusEl.textContent = "Cannot load the products:(";
   }
 }
 
-function renderProducts(list) {
+function renderProducts(list) { 
   if (!list.length) {
     productsContainer.innerHTML = `<p>No results.</p>`;
     return;
@@ -71,3 +71,5 @@ searchInput.addEventListener("input", (e) => {
 });
 
 loadProducts();
+
+
