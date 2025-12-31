@@ -36,9 +36,9 @@ function productCardHTML(p) {
       <div class="product-title">${escapeHtml(p.title)}</div>
       <div class="product-category">${escapeHtml(p.category)}</div>
       <div class="product-price">${Number(p.price).toFixed(2)} $</div>
-    </article>
+    </article> 
   `;
-}
+} 
 
 function escapeHtml(str) {
   return String(str)
@@ -49,7 +49,7 @@ function escapeHtml(str) {
     .replace(/'/g, "&#039;");
 }
 
-function filterProducts(q) {
+function filterProducts(q) {. //filter for product search
   const query = q.trim().toLowerCase();
   if (!query) return allProducts;
 
