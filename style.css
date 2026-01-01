@@ -709,6 +709,14 @@ body {
        
 }
 
+ .city__input :nth-child(2){
+
+    width: 300px;
+    display: grid;
+    height: 60px;
+    margin-left: 3rem;
+    align-items: flex-start;
+}
 
 .city__input input{
     background-color: #c2a6ab;
