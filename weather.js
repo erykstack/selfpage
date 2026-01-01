@@ -49,7 +49,7 @@ loadLocalization().then(coords => { //if the API is available we get the data to
 });
 
 
-function kelvinToCelsius(k) {
+function kelvinToCelsius(k) { //changing temperatrue from Kelvin to Celcius
     return Math.round((k - 273.15) * 10) / 10;
 }
 
