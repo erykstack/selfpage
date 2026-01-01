@@ -29,7 +29,7 @@ function renderProducts(list) {
   productsContainer.innerHTML = list.map(productCardHTML).join("");
 }
 
-function productCardHTML(p) {
+function productCardHTML(p) { //creating input for html with category of product description
   return `
     <article class="product">
       <img src="${p.image}" alt="${escapeHtml(p.title)}" loading="lazy" />
