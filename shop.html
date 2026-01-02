@@ -59,18 +59,32 @@
  
 <main class ="container">
     <h1>Product search</h1>
+    <div class="search-row">
+        <div class="search-box">
+         <input
+            type = "text"
+            id = "searchInput"
+            placeholder="Search for name, description, category..."
+            autocomplete="off"
+            />
+            <ul id = "suggestions" class="suggestions hidden" role="listbox" aria-label="Hints"></ul>
+        </div>
+       
+        
+        <select id="sortSelect" class="sort">
 
-    <div class="search-box">
-        <input
-        type = "text"
-        id = "searchInput"
-        placeholder="Search for name, description, category..."
-        autocomplete="off"
-        />
+            <option value = "relevance">Sort: relevance</option>
+            <option value = "priceAsc">Price: Ascending</option>
+            <option value = "priceDesc">Price: Descending</option>
+            <option value = "titleAsc">Title: A-Z</option>
+            <option value = "titleDesc">Title: Z-A</option>
+            
+        </select>
+        <div id= "status" class="status">Loading products...</div>
+        <section id="products" class="products" aria-live="polite"></section>
+
+
     </div>
-
-    <div id= "status" class="status">Loading products...</div>
-    <section id="products" class="products" aria-live="polite"></section>
 </main>
 
 <!-- Footer Section -->
