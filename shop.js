@@ -73,5 +73,36 @@ searchInput.addEventListener("input", (e) => {
   }, 200);
 });
 
+
+const state = {
+query: "",
+sort: "relevance",
+activeIndex: -1,
+};
+
+function showSuggestions(){
+  suggestionsEl.classList.remove("hidden");
+}
+
+function hideSuggestions(){
+  suggestionsEl.classList.add("hidden");
+}
+
+function getSuggestions(query){
+  const filtered = filterProducts(query);
+  return filtered.slice(0,8);
+}
+
+function renderSuggestions(items){
+  if(!state.query || state.query.length <2 || items.length === 0){
+    hideSuggestions();
+    return;
+  }
+}
+
+// next suggestionsEl.innnerHTML -> creating classes in html
+
+
+
 loadProducts();
 
