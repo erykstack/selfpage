@@ -3,6 +3,9 @@ const API_URL = "https://fakestoreapi.com/products";
 const searchInput = document.querySelector("#searchInput");
 const productsContainer = document.querySelector("#products");
 const statusEl = document.querySelector("#status");
+const suggestionsEl = document.querySelector("#suggestions")
+const sortSelect = document.querySelector("#sortSelect")
+
 
 let allProducts = [];
 
