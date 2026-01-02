@@ -1,4 +1,3 @@
-const API_KEY = "x";
 
 // Ustawienia
 let city_coord = "Warsaw";

@@ -49,7 +49,7 @@ function escapeHtml(str) {
     .replace(/'/g, "&#039;");
 }
 
-function filterProducts(q) {. //filter for product search
+function filterProducts(q) { //filter for product search
   const query = q.trim().toLowerCase();
   if (!query) return allProducts;
 
@@ -71,5 +71,4 @@ searchInput.addEventListener("input", (e) => {
 });
 
 loadProducts();
-
 
