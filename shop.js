@@ -94,14 +94,38 @@ function getSuggestions(query){
 }
 
 function renderSuggestions(items){
-  if(!state.query || state.query.length <2 || items.length === 0){
+  if(!state.query || state.query.length < 2 || items.length === 0){
     hideSuggestions();
     return;
   }
+
+  suggestionsEl.innerHTML = items.map((p, idx) => {
+    const title = escapeHtml(p.title);
+    const cat = escapeHtml(p.category);
+    const price = Number(p.price).toFixed(2);
+    const activeClass = idx === state.activeIndex ? "active" : "";
+
+    return `
+    <li class = "suggestion-item ${activeClass}" role = "option" data-index= "${idx}">
+      <div class = "suggestion-title"> ${title}</div>
+      <div class = "suggestion-meta">${cat} • ${price} $</div>
+    </li>
+    `;
+  }).join("");
+
+  showSuggestions();
 }
 
-// next suggestionsEl.innnerHTML -> creating classes in html
+function pickSuggestion(item, index) {
+  const chosen = items[index];
+  if (!chosen) return;
 
+  searchInput.value = chosen.title;
+  state.query = chosen.title;
+
+  hideSuggestions();
+  applySearchRender();
+}
 
 
 loadProducts();
