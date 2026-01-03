@@ -127,6 +127,41 @@ function pickSuggestion(item, index) {
   applySearchRender();
 }
 
+function sortProducts (list, sortMode){
+  const arr = [...list]; 
+switch (sortMode) {
+  case "priceAsc":
+    return arr.sort((a, b) => Number(a.price) - Number(b.price));
+  
+  case "priceDesc":
+    return arr.sort((a, b) => Number(b.price) - Number(a.price));
+
+  case "titleAsc":
+    return arr.sort((a, b) => String(a.title).localeCompare(String(b.title)));
+
+  case "titleDesc":
+    return arr.sort((a, b) => String(b.title).localeCompare(String(a.title)));
+
+    case "relevance": 
+    default:
+      return arr;
+  }
+
+}
+
+function applySearchRender(){
+  const filtered = filterProducts(state.query);
+  const sorted = sortProducts(filtered, state.sort);
+
+  statusEl.textContent = `Result: ${sorted.length}/ ${allProducts.length}`;
+  renderProducts(sorted);
+
+  const suggestions = getSuggestions(state.query);
+  renderSuggestions(suggestions);
+}
+
+
+
 
 loadProducts();
 
