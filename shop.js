@@ -16,7 +16,7 @@ async function loadProducts() { // async function for API download
     allProducts = await res.json();
 
     statusEl.textContent = `Loaded ${allProducts.length} products.`; // counting the products 
-    renderProducts(allProducts); //calling the render funciton 
+    renderProducts(allProducts); 
   } catch (err) {
     console.error(err);
     statusEl.textContent = "Cannot load the products:(";
@@ -65,13 +65,94 @@ function filterProducts(q) { //filter for product search
 // debounce
 let t = null;
 searchInput.addEventListener("input", (e) => {
+  state.query = e.target.value;
+
+
   clearTimeout(t);
   t = setTimeout(() => {
-    const filtered = filterProducts(e.target.value);
-    statusEl.textContent = `Result: ${filtered.length} / ${allProducts.length}`;
-    renderProducts(filtered);
-  }, 200);
+    applySearchRender();
+    saveUiState();
+  }, 150);
 });
+
+suggestionsEl.addEventListener("mousedown", (e)=> {
+  const item = e.target.closest(".suggestion-item");
+  if(!item) return;
+
+  const items = getSuggestions(state.query);
+  const idx = Number(item.dataset.index);
+  pickSuggestion(items, idx);
+  saveUiState();
+});
+
+searchInput.addEventListener("keydown", (e) => {
+  const items = getSuggestions(state.query);
+  if (suggestionsEl.classList.contains("hidden")) return;
+
+  if (e.key === "ArrowDown") {
+    e.preventDefault();
+    state.activeIndex = Math.min(state.activeIndex + 1, items.length - 1);
+    renderSuggestions(items);
+  }
+
+  if (e.key === "ArrowUp") {
+    e.preventDefault();
+    state.activeIndex = Math.max(state.activeIndex - 1, 0);
+    renderSuggestions(items);
+  }
+
+  if (e.key === "Enter") {
+    if (state.activeIndex >= 0) {
+      e.preventDefault();
+      pickSuggestion(items, state.activeIndex);
+      saveUiState();
+    }
+  }
+
+  if (e.key === "Escape") {
+    hideSuggestions();
+  }
+});
+
+document.addEventListener("click", (e) => {
+  const inside = e.target.closest(".search-box");
+  if (!inside) hideSuggestions();
+});
+
+
+sortSelect.addEventListener("change", (e) => {
+  state.sort = e.target.value;
+  applySearchRender();
+  saveUiState();
+});
+
+
+const UI_KEY = "shop_ui_v1";
+
+function saveUiState() {
+  const payload = {
+    query: state.query,
+    sort: state.sort,
+  };
+  localStorage.setItem(UI_KEY, JSON.stringify(payload));
+}
+
+function loadUiState() {
+  const raw = localStorage.getItem(UI_KEY);
+  if (!raw) return;
+
+  try {
+    const parsed = JSON.parse(raw);
+    if (typeof parsed.query === "string") state.query = parsed.query;
+    if (typeof parsed.sort === "string") state.sort = parsed.sort;
+
+    searchInput.value = state.query;
+    sortSelect.value = state.sort;
+  } catch {
+    // jak coś się zepsuło w localStorage, ignorujemy
+  }
+}
+
 
 
 const state = {
@@ -162,6 +243,6 @@ function applySearchRender(){
 
 
 
-
+loadUiState();
 loadProducts();
 
