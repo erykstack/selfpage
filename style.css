@@ -754,6 +754,7 @@ body {
     margin-top: 2rem;
     margin-left: 2rem;
     align-items: flex-start;
+    padding: 15px 10px;
    
  }
 
@@ -770,6 +771,9 @@ body {
     margin-top: 2rem;
     margin-left: 2rem;
     align-items: flex-start;
+    padding: 3px 20px;
+    border-radius: 2rem;
+
  }
 
 
