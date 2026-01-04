@@ -773,7 +773,7 @@ body {
     align-items: flex-start;
     padding: 3px 20px;
     border-radius: 2rem;
-
+    border: 3px solid #aaa ;
  }
 
 
