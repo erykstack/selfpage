@@ -707,16 +707,18 @@ body {
     border: 3px solid #839c79;
     padding: 15px 25px;
     overflow: hidden;
+    align-items: flex-start;
        
 }
 
  .city__input :nth-child(2){
 
-    width: 200px;
+    width: 25%;
     display: grid;
     height: 50px;
     margin-left: 2rem;
     align-items: flex-start;
+    
 
 }
 
@@ -726,7 +728,7 @@ body {
     font-size: 20px;
     text-align: center;
       padding: 30px 30px;
-       width: 30%;
+       width: 35%;
     padding: 10px 14px;
     font-size: 16px;
     border-radius: 10px;
