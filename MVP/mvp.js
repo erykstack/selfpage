@@ -38,8 +38,9 @@ async function loadUsers(params) {
         if(!res.ok) throw new Error("Data download Error");
 
         const data = await res.json();
-
+        
         allUsers = data.users;
+        console.log(allUsers);
         renderAll();
     }catch(err){
         console.error(err);
@@ -81,5 +82,36 @@ function renderKpis(users){
     </div>
   `;
 }
+ 
+function filterUsers(q) {
+    const query = q.trim().toLowerCase();
+    if(!query) return allUsers;
 
+    return allUsers.filter(u => {
+        const name = `${u.firstName} ${u.lastName}`.toLowerCase();
+        const email = String(u.email || "").toLocaleLowerCase();
+        return name.includes(query) || email.includes(query);
+    });
+}
+
+function sortUsers(list, sortMode) {
+    const arr = [...list];
+
+     switch (sortMode) {
+    case "nameAsc":
+      return arr.sort((a, b) =>
+        `${a.firstName} ${a.lastName}`.localeCompare(`${b.firstName} ${b.lastName}`)
+      );
+    case "nameDesc":
+      return arr.sort((a, b) =>
+        `${b.firstName} ${b.lastName}`.localeCompare(`${a.firstName} ${a.lastName}`)
+      );
+    case "ageAsc":
+      return arr.sort((a, b) => Number(a.age) - Number(b.age));
+    case "ageDesc":
+      return arr.sort((a, b) => Number(b.age) - Number(a.age));
+    default:
+      return arr;
+  }
+}
 
