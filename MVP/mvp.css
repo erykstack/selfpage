@@ -1,0 +1,141 @@
+.main {box-sizing: border-box;}
+
+body{
+    margin: 0;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background: #fff;
+    color: #111;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 32px auto;
+    padding: 0 16px;
+}
+
+.header {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.controls input, .controls select {
+    height: 42px;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.controls input {
+    width: min(420px, 70vw);
+}
+
+.kpis {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin: 10px 0 18px;
+}
+
+.kpi {
+    border: 1px solid #eee;
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.kpi-title {
+    font-size: 12px;
+    color: #666;
+}
+
+.kpi-value  {
+    font-size: 28px;
+    font-weight: 800;
+    margin-top: 6px;
+}
+
+.panel {
+    border: 1px solid #eee;
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.status {
+    font-size: 13px;
+    color: #666;
+}
+
+.table-wrap {
+    overflow: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 760px;
+}
+
+.table th, .table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.table th{
+    background: #fafafa;
+    font-size: 13px;
+    color: #444;
+}
+
+.table td{
+    font-size: 14px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding-top: 12px;
+}
+
+.pagination button {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 900px){
+    .kpis {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
