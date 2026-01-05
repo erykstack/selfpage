@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXT Website</title>
+    <title>MVP</title>
     <link rel="stylesheet" href="../style.css">
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;800&display=swap">
 
@@ -58,18 +58,55 @@
 
 
 <!--MVP SECTION-->
+<main class="container">
+    <header class="header">
+        <h1>Admin Dashboard</h1>
 
+        <div class="controls">
+            <input id="searchInput" type="text" placeholder="Search User..." autocomplete="off" />
+            <select id="sortSelect">
+                <option value="nameAsc">Name: A-Z</option>
+                <option value="nameDesc">Name Z-A</option>
+                <option value="ageAsc">Age: Ascending</option>
+                <option value="ageDesc">Age: Descenging</option>
+            </select>
+        </div>
 
-</br>
-</br>
-</br >
-</br>
-</br>
-</br>
+    </header>
 
+    <section id="kpis" class="kpis">
+        <!--JS here with KPI's-->
+    </section>
 
+    <section class="panel">
+        <div class="panel-handler">
+            <h2>Users</h2>
+            <div id="status" class="status">Loading…</div>
+        </div>
 
+        <div class="table-wrap">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th>Company</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!--JS with rows-->
+                </tbody>
+            </table>
+        </div>
 
+        <footer class="pagination">
+            <button id="prevBtn">← Prev</button>
+            <span id="pageInfo"></span>
+            <button id="nextBtn">Next →</button>
+        </footer>
+    </section>
+</main>
 
 
 <!-- Footer Section -->
@@ -142,8 +179,8 @@
 
 </div>
 
-
-<script src="app.js"></script>
+<script src="mvp.js"></script>
+<script src="../app.js"></script>
 
 </body>
 </html> 
