@@ -146,3 +146,36 @@ function renderTable(userPage) {
 }
 
 
+// render function for applying all the data from promise API 
+
+function renderAll() {
+  const filtered = filterUsers(state.query);
+
+  const sorted = sortUsers(filtered, state.sort);
+
+  const total = sorted.length;
+  const totalPages = Math.min(state.page, totalPages);
+
+  const pageItems = paginate(sorted, state.page, state.pageSize);
+
+  renderKpis(filtered);
+
+  statusEl.textContent = `Results: ${total} (page ${state.page}/${totalPages})`;
+
+  renderTable(pageItems);
+
+  pageInfo.textContent = `Page ${state.page} / ${totalPages}`;
+  prevBtn.disabled = state.page <= 1;
+  nextBtn.disabled = state.page >= totalPages;
+}
+
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
