@@ -115,3 +115,10 @@ function sortUsers(list, sortMode) {
   }
 }
 
+function paginate(list, page, pageSize) {
+  const start = (page - 1) * pageSize; 
+  const end = start + pageSize;
+  return list.slice(start, end);
+}
+
+
