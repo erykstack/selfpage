@@ -121,4 +121,28 @@ function paginate(list, page, pageSize) {
   return list.slice(start, end);
 }
 
+function renderTable(userPage) {
+  if(!userPage.length){
+    tableBody.innerHTML = `<tr><td colspan = "4">No results </td></tr>`;
+    return;
+  }
+
+  tableBody.innerHTML = userPage.map(u => {
+    const name = `${u.firstName} ${u.lastName}`;
+    const email = u.email || "-";
+    const age = u.age ?? "-";
+    const company = u.company?.name || "-";
+
+    return `
+      <tr>
+        <td>${escapeHtml(name)}</td>
+         <td>${escapeHtml(email)}</td>
+        <td>${escapeHtml(String(age))}</td>
+        <td>${escapeHtml(company)}</td>
+      </tr> 
+    `;
+  }).join("");
+
+}
+
 
