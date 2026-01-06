@@ -153,7 +153,7 @@ function renderAll() {
   const sorted = sortUsers(filtered, state.sort);
 
   const total = sorted.length;
-  const totalPages = Math.min(state.page, totalPages);
+  const totalPages = Math.min(1, Math.ceil(total / state.pageSize));
 
   const pageItems = paginate(sorted, state.page, state.pageSize);
 
