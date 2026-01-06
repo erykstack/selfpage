@@ -153,7 +153,7 @@ function renderAll() {
   const sorted = sortUsers(filtered, state.sort);
 
   const total = sorted.length;
-  const totalPages = Math.min(1, Math.ceil(total / state.pageSize));
+  const totalPages = Math.max(1, Math.ceil(total / state.pageSize));
 
   const pageItems = paginate(sorted, state.page, state.pageSize);
 
@@ -164,6 +164,8 @@ function renderAll() {
   renderTable(pageItems);
 
   pageInfo.textContent = `Page ${state.page} / ${totalPages}`;
+
+
   prevBtn.disabled = state.page <= 1;
   nextBtn.disabled = state.page >= totalPages;
 }
@@ -181,7 +183,7 @@ function escapeHtml(str) {
 let t = null; 
 
 searchInput.addEventListener("input", (e)=>{
-  state.query - e.target.value;
+  state.query = e.target.value;
 
   clearTimeout(t);
   t = setTimeout (()=> {
