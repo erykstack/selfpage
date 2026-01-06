@@ -40,7 +40,6 @@ async function loadUsers(params) {
         const data = await res.json();
         
         allUsers = data.users;
-        console.log(allUsers);
         renderAll();
     }catch(err){
         console.error(err);
@@ -179,3 +178,32 @@ function escapeHtml(str) {
     .replace(/'/g, "&#039;");
 }
 
+let t = null; 
+
+searchInput.addEventListener("input", (e)=>{
+  state.query - e.target.value;
+
+  clearTimeout(t);
+  t = setTimeout (()=> {
+    state.page = 1;
+    renderAll();
+  }, 150);
+});
+
+sortSelect.addEventListener("change", (e) =>{
+  state.sort = e.target.value;
+  state.page = 1;
+  renderAll();
+});
+
+prevBtn.addEventListener("click", ()=> {
+  state.page = Math.max(1, state.page - 1);
+  renderAll();
+});
+
+nextBtn.addEventListener("click", () =>{
+  state.page = state.page + 1; 
+  renderAll();
+});
+
+loadUsers();
