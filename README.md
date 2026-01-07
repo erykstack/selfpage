@@ -20,3 +20,10 @@ The look of the button and input has been changed.
 Look of the input and button has been updated. I also added dropdown list with few cities! Now you can choose one and get the weather!
 
 <img width="1292" height="442" alt="image" src="https://github.com/user-attachments/assets/be3a7eae-16be-4007-b245-6ee5b0027fb4" />
+
+
+The site has footer section with MVP, Shop, and Weather applications. For weather app you need to have API key from https://openweathermap.org/api.
+
+<img width="232" height="207" alt="image" src="https://github.com/user-attachments/assets/fbf7b1c5-c3d7-4c4c-9e2b-ef32d2fc83ef" />
+
+For running this file please download the repository. 
