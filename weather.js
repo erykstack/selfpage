@@ -12,7 +12,7 @@ async function loadLocalization() {
         const res = await fetch(url);
         const data = await res.json();
 
-        console.log("geo data:", data); // żebyś widział, co przychodzi
+       
 
         if (!Array.isArray(data) || data.length === 0) {
             if (localizaiton){
@@ -173,5 +173,6 @@ function renderWeather(data) {
 
 loadLocalization();
 loadWeather();
+
 
 
