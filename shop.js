@@ -149,7 +149,6 @@ function loadUiState() {
     searchInput.value = state.query;
     sortSelect.value = state.sort;
   } catch {
-    // jak coś się zepsuło w localStorage, ignorujemy
   }
 }
 
