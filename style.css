@@ -412,7 +412,7 @@ font-size: 2.5rem;
     rgba(0,0,0,0)0%,
     rgba(17,17,17,0.6) 100%
     ),
-    url('/images/pic1.jpg');
+    url('../images/pic1.jpg');
     background-size: cover;
     position: relative;
     color: #fff;
@@ -425,7 +425,7 @@ font-size: 2.5rem;
     rgba(0,0,0,0)0%,
     rgba(17,17,17,0.6) 100%
     ),
-    url('/images/pic2.jpg');
+    url('../images/pic2.jpg');
 }
 
 .services h2{
