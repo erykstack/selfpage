@@ -25,4 +25,4 @@ Click "Get started" to see the apps!
 
 <img width="846" height="476" alt="image" src="https://github.com/user-attachments/assets/fb7c5688-7a78-462d-992f-a8ebb5709db9" />
 
-5) Don't forget about Sign up button! 
+4) Don't forget about Sign up button! 
