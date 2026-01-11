@@ -6,5 +6,10 @@ menu.addEventListener('click', function (){
     menuLinks.classList.toggle('active');
 });
 
+const btn = document.querySelector('#getStarted');
+const services = document.querySelector('#services');
 
+btn.addEventListener("click", () => {
+    services.scrollIntoView({behavior: "smooth"});
+});
 
