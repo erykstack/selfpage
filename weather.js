@@ -1,7 +1,7 @@
 
 // Ustawienia
 let city_coord = "Warsaw";
-
+const API_KEY = "8b4ce157521e8cd84417090672965284";
 
 async function loadLocalization() {
     const localizaiton = document.getElementById("cityLocalization");   //Setting the data according to city coordinates 

@@ -4,6 +4,11 @@ function isLoggedIn(){
     return Boolean(localStorage.getItem(AUTH_KEY));
 }
 
+function getUser(){
+    const raw = localStorage.getItem(AUTH_KEY);
+    return raw ? JSON.parse(raw) : null;
+}
+
 function login(email){
     const user = {
         email,
@@ -12,3 +17,6 @@ function login(email){
     localStorage.setItem(AUTH_KEY, JSON.stringify(user));
 }
 
+function logout(){
+    localStorage.removeItem(AUTH_KEY);
+}
