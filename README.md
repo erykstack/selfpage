@@ -18,8 +18,11 @@ Click "Get started" to see the apps!
 
 2) This is shop site, you can search for the items with names and sort the items. 
 
+<img width="1252" height="815" alt="image" src="https://github.com/user-attachments/assets/e43c0e04-dbda-4d74-ac79-d99d0d3fa1e4" />
+
+
 3) This is weather map, you can check the weather of any location by writing locations name or you can choose one from dropdown list.
-4) 
-<img width="846" height="476" alt="image" src="https://github.com/user-attachments/assets/074a3300-8eee-4274-bc47-1a714872721e" />
+
+<img width="846" height="476" alt="image" src="https://github.com/user-attachments/assets/fb7c5688-7a78-462d-992f-a8ebb5709db9" />
 
 5) Don't forget about Sign up button! 
