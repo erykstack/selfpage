@@ -1,29 +1,27 @@
-Here is a page dedicated to learn how to integrate website with API which is downloaded from other websites. 
-Actually I integrated weather app and did CSS for this, later on I will keep addjusting the style of the web page. 
+Hello! 
 
-To open this you need to download all the files including picture folder and run it with Visual Studio Code. 
-On the main page (index.html) you can scroll down and click for Weather site to chceck actual weather in Babice, PL. It will be possible to choose one of the major cities in the next versions of this app. 
+This is my portfolio website for integrating API's and searching tools. You can check the page by clicking this link: https://selfpage-psi.vercel.app/
 
-Now there is a possibility to set the weather by using the Name of the city.
-You need to open the weather.js file and on the top change the name of city_coord to anything you want! 
-This will be updated in the next session to clickable list.  
+<img width="1527" height="933" alt="image" src="https://github.com/user-attachments/assets/9c5c1e8f-a334-48a7-ac25-687e1ea1746c" />
 
-Now you can type the city and set the weather! 
-<img width="305" height="133" alt="image" src="https://github.com/user-attachments/assets/2f95bc2c-15b8-4cf5-ac3f-fc3e14303e6b" />
+There is a 4 clickable buttons on top of the site feel free to check them! 
 
-I will change the look of this in the next coding session. 
+After clicking Get started you will be directed to the application's section. 
 
-The look of the button and input has been changed. 
+<img width="1113" height="726" alt="image" src="https://github.com/user-attachments/assets/a05e557d-d7ff-4ec1-9064-7c29afe3c7b5" />
 
-<img width="680" height="269" alt="image" src="https://github.com/user-attachments/assets/0fde61da-6f76-446a-816b-3fefb57518ae" />
+Click "Get started" to see the apps! 
+1) 
+This is admin Panel you can search the names and surnames. 
 
-Look of the input and button has been updated. I also added dropdown list with few cities! Now you can choose one and get the weather!
+<img width="1113" height="726" alt="image" src="https://github.com/user-attachments/assets/c1c17705-4399-4880-a328-55637705023c" />
 
-<img width="1292" height="442" alt="image" src="https://github.com/user-attachments/assets/be3a7eae-16be-4007-b245-6ee5b0027fb4" />
+2)
+This is shop site, you can search for the items with names and sort the items. 
 
+3) .
+This is weather map, you can check the weather of any location by writing locations name or you can choose one from dropdown list.
+<img width="846" height="476" alt="image" src="https://github.com/user-attachments/assets/074a3300-8eee-4274-bc47-1a714872721e" />
 
-The site has footer section with MVP, Shop, and Weather applications. For weather app you need to have API key from https://openweathermap.org/api.
-
-<img width="232" height="207" alt="image" src="https://github.com/user-attachments/assets/fbf7b1c5-c3d7-4c4c-9e2b-ef32d2fc83ef" />
-
-For running this file please download the repository. 
+4).
+Don't forget about Sign up button! 
