@@ -47,46 +47,49 @@
                     <a href="product.html" class="navbar__links">Ideas</a>
                 </li>
                 <li class="navbar__btn">
-                    <a href="/" class="button"> Sign Up </a>
+                    <a href="/LoginPage/login.html" class="button"> Sign Up </a>
                 </li>
             </ul>
     </div>
 </nav>
 
+<section class="weathe__container">
+    <div class="weather__panel">
+            <div class="city__input">
+                <input id="city__input" type="text" placeholder="Type the city eg. Warsaw">
+                <button id="city__save">Show the weather</button>
+            </div>
 
-<div class="city__input">
-    <input id="city__input" type="text" placeholder="Type the city eg. Warsaw">
-    <button id="city__save">Show the weather</button>
-</div>
+        <div class="city__select">
+            <label for=" city-select">Choose the city:</label>
+            <select id= "city-select">
+                <option value = "">Choose option</option>
+                <option value = "Warsaw">Warsaw</option>   
+                <option value = "Krakow">Krakow</option>
+                <option value = "Gdansk">Gdansk</option>
+                <option value = "Tokyo">Tokyo</option>
+                <option value = "Osaka">Osaka</option>
+                <option value = "Madrid">Madrid</option>
+                <option value = "Berlin">Berlin</option>
+                <option value = "Prague">Prague</option>
+                <option value = "Sydney">Sydney</option>
+                <option value = "New York" >New York</option>
+                <option value = "Paris">Paris</option>
+                <option value = "Taiwan">Taiwan</option>
 
-<div class="city__select">
-    <label for=" city-select">Choose the city:</label>
-    <select id= "city-select">
-        <option value = "">Choose option</option>
-        <option value = "Warsaw">Warsaw</option>   
-        <option value = "Krakow">Krakow</option>
-        <option value = "Gdansk">Gdansk</option>
-        <option value = "Tokyo">Tokyo</option>
-        <option value = "Osaka">Osaka</option>
-        <option value = "Madrid">Madrid</option>
-        <option value = "Berlin">Berlin</option>
-        <option value = "Prague">Prague</option>
-        <option value = "Sydney">Sydney</option>
-        <option value = "New York" >New York</option>
-        <option value = "Paris">Paris</option>
-        <option value = "Taiwan">Taiwan</option>
+            </select>
+        </div>
 
-    </select>
-</div>
-
-<div id="cityLocalization">
-    Geographical coordination of the City
-</div>
-
-<div class="weather-widget" id="weather-widget">
-    Weather loading…
-</div>
-
+            <div id="cityLocalization">
+            Geographical coordination of the City
+            </div>
+    </div>
+        <div class="weather__results">
+            <div class="weather-widget" id="weather-widget">
+                Weather loading…
+            </div>
+        </div>
+</section>
 <div class="footer__container">
     <div class="footer__links">
         <div class="footer__link--wrapper">
@@ -154,7 +157,7 @@
         </div>
     </div>
 
-</div>
+</section>
 
 <script src="weather.js"></script>
 <script src="app.js"></script>

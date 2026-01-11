@@ -687,6 +687,12 @@ font-size: 2.5rem;
 
 /* Weather app */
 
+.weather__container{
+    
+    color: red;
+}
+
+
 body {
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -762,26 +768,29 @@ body {
     margin-top: 2rem;
     margin-left: 2rem;
     align-items: flex-start;
-   
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+
 }
 
 .city__input button{
-    background-color: #ccc;
+    background-color: #fff;
     cursor: pointer;
     margin-top: 15px;
     text-align: center;
     border-radius: 5rem;
     font-size: 16px;
-    border: 3px solid #839c79;
+    border: 1px solid #ccc;
     padding: 15px 25px;
     overflow: hidden;
     align-items: flex-start;
        
 }
 
- .city__input :nth-child(2){
+ .city__input:nth-child(2){
 
-    width: 25%;
+    width: 10px;
     display: grid;
     height: 50px;
     margin-left: 2rem;
@@ -792,14 +801,12 @@ body {
 
 .city__input input{
     background-color: #eee;
-    border-radius: 5rem;
-    font-size: 20px;
+    border-radius: 10px;
+    font-size: 16px;
     text-align: center;
       padding: 30px 30px;
        width: 35%;
     padding: 10px 14px;
-    font-size: 16px;
-    border-radius: 10px;
     border: 1px solid #aaa;
       
     }
@@ -827,6 +834,8 @@ body {
     margin-left: 2rem;
     align-items: flex-start;
     padding: 15px 10px;
+    margin: 0 auto;
+    width: 50%;
    
  }
 
@@ -848,6 +857,110 @@ body {
     border: 3px solid #aaa ;
  }
 
+
+
+.weather__container{
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 16px;
+
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  align-items: start;
+
+ 
+  color: #e5e7eb;
+}
+
+.weather__panel{
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.weather__result{
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.weather-widget{
+  position: static;           
+  width: 100%;
+  max-width: 360px;
+}
+
+.city__input,
+.city__select,
+#cityLocalization{
+  margin: 0;                  
+  gap: 12px;
+}
+
+.city__input{
+  display: grid;
+  gap: 12px;
+}
+
+.city__input input{
+  width: 100%;
+  height: 44px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(0,0,0,0.25);
+  color: #fff;
+  text-align: left;
+}
+
+
+.city__input button{
+  width: 50%;
+  height: 44px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 0;
+  background: #ff5a5f;
+  color: #fff;
+  font-weight: 700;
+  margin: auto;
+  display: block;;
+}
+
+
+#city-select{
+  position: static;      
+  width: 100%;
+  height: 44px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(0,0,0,0.25);
+  color: #fff;
+  box-shadow: none;
+  display: block;
+  margin: auto;
+}
+
+
+#cityLocalization{
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+}
+
+@media (max-width: 900px){
+  .weather__container{
+    grid-template-columns: 1fr;
+  }
+  .weather__result{
+    justify-content: flex-start;
+  }
+  .weather-widget{
+    max-width: 100%;
+  }
+}
 
 
 
