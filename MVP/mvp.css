@@ -28,12 +28,24 @@ body{
     align-items: center;
 }
 
-.controls input, .controls select {
+.controls input  {
     height: 42px;
+    width: 65%;
     padding: 10px 12px;
     border: 1px solid #ccc;
     border-radius: 10px;
     font-size: 14px;
+}
+
+.controls select{
+
+    height: 42px;
+    width: 35%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 14px;
+
 }
 
 .controls input {
