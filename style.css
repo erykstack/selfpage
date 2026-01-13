@@ -524,13 +524,9 @@ font-size: 2.5rem;
 
 
 
-
-
-
-
 @media screen and (max-width: 960px) {
     .services {
-        height: 2000px;
+        height: 2002px;
     }
     
     .services h1{
