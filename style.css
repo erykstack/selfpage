@@ -590,7 +590,7 @@ font-size: 2.5rem;
 }
 
 .footer__link--items h2{
-    margin-bottom: 16px;
+    margin-bottom: 16px;;
 }
 
 .footer__link--items > h2 {
@@ -601,6 +601,7 @@ font-size: 2.5rem;
     color: #fff;
     text-decoration: none;
     margin-bottom: 0.5rem;
+    opacity: 0.5;
 }
 
 .footer__link--items a:hover {
