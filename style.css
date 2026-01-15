@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;800&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -577,6 +579,13 @@ font-size: 2.5rem;
 
 .footer__link--wrapper {
     display: flex;
+}
+
+
+
+.footer__link--wrapper a{
+
+    font-family: 'Kumbh Sans', sans-serif;
 }
 
 .footer__link--items {
