@@ -586,6 +586,7 @@ font-size: 2.5rem;
 .footer__link--wrapper a{
 
     font-family: 'Kumbh Sans', sans-serif;
+    font-size: 18px;
 }
 
 .footer__link--items {
